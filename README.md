@@ -1,2 +1,2 @@
-# Pamola.Net
+# Pamola.NET
 RLC Circuit Simulation
