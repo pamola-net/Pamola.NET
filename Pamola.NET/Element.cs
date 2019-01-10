@@ -6,7 +6,7 @@ using System.Linq;
 namespace Pamola
 {
     /// <summary>
-    /// Base class for circuit elements.
+    /// Base <see cref="Pamola.Element"/> class for any and all circuit elements.
     /// </summary>
     public abstract class Element :
         IComponent
@@ -15,9 +15,10 @@ namespace Pamola
         private readonly List<Terminal> terminals = new List<Terminal>();
 
         /// <summary>
-        /// Element constructor.
+        /// Creates an <see cref="Pamola.Element"/> with the given amount of terminals.
         /// </summary>
         /// <param name="numberOfTerminals">Number of terminals to be created inside Element.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when <paramref name="numberOfTerminals"/> is less than or equal to 0.</exception>
         protected Element(int numberOfTerminals)
         {
             if (numberOfTerminals<=0)

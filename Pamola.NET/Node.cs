@@ -6,13 +6,13 @@ using System.Text;
 namespace Pamola
 {
     /// <summary>
-    /// Class for circuit nodes.
+    /// Represents the connection between two or more terminals.
     /// </summary>
     public class Node :
         IComponent
     {
         /// <summary>
-        /// Node current Voltage.
+        /// Current operating voltage.
         /// </summary>
         public Complex Voltage { get; private set; }
         

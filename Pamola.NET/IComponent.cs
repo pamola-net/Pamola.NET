@@ -5,12 +5,12 @@ using System.Text;
 namespace Pamola
 {
     /// <summary>
-    /// Basic Interface for all Pamola components.
+    /// Basic Interface for all Pamola circuit components.
     /// </summary>
     public interface IComponent
     {
         /// <summary>
-        /// Returns the components adjacent to this component.
+        /// Returns the components adjacent to this.
         /// </summary>
         IReadOnlyCollection<IComponent> AdjacentComponents { get; }
 
