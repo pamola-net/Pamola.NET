@@ -10,7 +10,7 @@ namespace Pamola
     public interface IComponent
     {
         /// <summary>
-        /// 
+        /// Returns the components adjacent to this component.
         /// </summary>
         IReadOnlyCollection<IComponent> AdjacentComponents { get; }
 
