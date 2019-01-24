@@ -27,10 +27,14 @@ namespace Pamola
             terminals.AddRange(Enumerable.Range(0, numberOfTerminals).Select(_ => new Terminal(this)));
         }
 
+        /// <summary>
+        /// Represents the terminals of this <see cref="Pamola.Element"/>.
+        /// </summary>
+        public IReadOnlyCollection<Terminal> Terminals{ get => terminals; }
 
-
-        public IReadOnlyCollection<Terminal> Terminals{ get; }
-
-        public IReadOnlyCollection<IComponent> AdjacentComponents { get; }
+        /// <summary>
+        /// Returns all <see cref="Pamola.IComponent"/> directly connected to this.
+        /// </summary>
+        public IReadOnlyCollection<IComponent> AdjacentComponents { get => terminals; }
     }
 }
