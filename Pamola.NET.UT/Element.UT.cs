@@ -37,6 +37,10 @@ namespace Pamola.UT
             Assert.Equal(numberOfTerminals, element.Terminals.Count);
         }
 
+        /// <summary>
+        /// Checks if <see cref="Pamola.Element.AdjacentComponents"/> list matches the <see cref="Pamola.Element.Terminals"/> list.
+        /// </summary>
+        /// <param name="numberOfTerminals"></param>
         [Theory]
         [InlineData(1)]
         [InlineData(2)]

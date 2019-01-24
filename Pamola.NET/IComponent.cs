@@ -13,7 +13,7 @@ namespace Pamola
         /// Returns the components adjacent to this.
         /// </summary>
         IReadOnlyCollection<IComponent> AdjacentComponents { get; }
-
+        
 
     }
 }
