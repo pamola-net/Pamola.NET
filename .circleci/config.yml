@@ -1,0 +1,25 @@
+version: 2.1
+executors:
+  dotnetcoreexecutor:
+    docker:
+      - image: microsoft/dotnet:2.2-sdk
+jobs:
+  build:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: dotnet build Pamola.NET/Pamola.NET.csproj
+  test:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: dotnet test
+
+workflows:
+  version: 2.1
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
