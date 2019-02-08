@@ -21,7 +21,8 @@ namespace Pamola.UT
             new object[] {new Complex(1.0,1.0)},
             new object[] {new Complex(1.0,-1.0)},
             new object[] {new Complex(-1.0,1.0)},
-            new object[] {new Complex(-1.0,-1.0)}
+            new object[] {new Complex(-1.0,-1.0)},
+            new object[] {new Complex(-1.1,-1.1)}
         };
 
         /// <summary>
