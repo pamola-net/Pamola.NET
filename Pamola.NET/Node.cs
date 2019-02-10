@@ -9,13 +9,19 @@ namespace Pamola
     /// Represents the connection between two or more terminals.
     /// </summary>
     public class Node :
-        IComponent
+        Component
     {
         /// <summary>
         /// Current operating voltage.
         /// </summary>
         public Complex Voltage { get; private set; }
-        
-        public IReadOnlyCollection<IComponent> AdjacentComponents => throw new NotImplementedException();
+
+        //TODO: Check if private or internal
+        internal List<Terminal> terminals = new List<Terminal>();
+
+        public IReadOnlyCollection<Terminal> Terminals { get => terminals; }
+
+        protected override IReadOnlyCollection<IComponent> AdjacentComponents { get => Terminals; }
+        protected override IReadOnlyCollection<Variable> Variables { get => new[] { new Variable(() => Voltage, value => Voltage = value) }; }
     }
 }

@@ -12,6 +12,9 @@ namespace Pamola
         IComponent
     {
 
+        //TODO: Inheriting from Component, rather than IComponent.
+
+
         private readonly List<Terminal> terminals = new List<Terminal>();
 
         /// <summary>
@@ -36,5 +39,8 @@ namespace Pamola
         /// Returns all <see cref="Pamola.IComponent"/> directly connected to this.
         /// </summary>
         public IReadOnlyCollection<IComponent> AdjacentComponents { get => terminals; }
+
+
+        public abstract IReadOnlyCollection<Variable> Variables { get; }
     }
 }

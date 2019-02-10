@@ -13,6 +13,11 @@ namespace Pamola
         /// Returns the components adjacent to this.
         /// </summary>
         IReadOnlyCollection<IComponent> AdjacentComponents { get; }
+
+        /// <summary>
+        /// A collection of appropriate variables relative to the nature of this component.
+        /// </summary>
+        IReadOnlyCollection<Variable> Variables { get; }
         
 
     }

@@ -16,6 +16,6 @@ namespace Pamola.UT
         /// <param name="numberOfTerminals">Number of terminals for testing.</param>
         public MockedElement(int numberOfTerminals) : base(numberOfTerminals) { }
 
-
+        public override IReadOnlyCollection<Variable> Variables => throw new NotImplementedException();
     }
 }

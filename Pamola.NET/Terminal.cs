@@ -9,7 +9,7 @@ namespace Pamola
     /// <summary>
     /// Represents a terminal or pin of any circuit element.
     /// </summary>
-    public class Terminal : IComponent
+    public class Terminal : Component
     { 
         /// <summary>
         /// Current passing through this terminal (positive when entering the element, negative otherwise).
@@ -25,7 +25,6 @@ namespace Pamola
         /// The <see cref="Pamola.Node"/> this termininal is currently connected to (null when disconnected).
         /// </summary>
         public Node Node { get; internal set; }
-        // TODO: check if internal set or private set
 
         /// <summary>
         /// Creates a terminal for a given owner <see cref="Pamola.Element"/>.
@@ -36,9 +35,8 @@ namespace Pamola
             Element = ownerElement;
         }
 
-        /// <summary>
-        /// A collection with owner <see cref="Element"/> and current <see cref="Node"/> (when connected).
-        /// </summary>
-        IReadOnlyCollection<IComponent> IComponent.AdjacentComponents => (new[] { (IComponent)Element, Node }).Where(component => component != null).ToList();
+        protected override IReadOnlyCollection<IComponent> AdjacentComponents { get => (new[] { (IComponent)Element, Node }).Where(component => component != null).ToList(); }
+        protected override IReadOnlyCollection<Variable> Variables { get => new[] { new Variable(() => Current, value => Current = value) }; }
+        
     }
 }
