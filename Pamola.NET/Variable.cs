@@ -8,7 +8,7 @@ namespace Pamola
     /// <summary>
     /// Represents a variable in a circuit.
     /// </summary>
-    public class Variable
+    public sealed class Variable
     {
         /// <summary>
         /// Generates a <see cref="Variable"/> with the given getter and setter.

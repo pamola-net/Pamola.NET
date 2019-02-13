@@ -9,7 +9,7 @@ namespace Pamola
     /// <summary>
     /// Represents a terminal or pin of any circuit element.
     /// </summary>
-    public class Terminal : Component
+    public sealed class Terminal : Component
     { 
         /// <summary>
         /// Current passing through this terminal (positive when entering the element, negative otherwise).
@@ -36,6 +36,7 @@ namespace Pamola
         }
 
         protected override IReadOnlyCollection<IComponent> AdjacentComponents { get => (new[] { (IComponent)Element, Node }).Where(component => component != null).ToList(); }
+
         protected override IReadOnlyCollection<Variable> Variables { get => new[] { new Variable(() => Current, value => Current = value) }; }
         
     }

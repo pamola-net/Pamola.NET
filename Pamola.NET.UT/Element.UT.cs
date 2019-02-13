@@ -48,7 +48,8 @@ namespace Pamola.UT
         public void AdjacentComponentsMatchTerminals(int numberOfTerminals)
         {
             var element = new MockedElement(numberOfTerminals);
-            Assert.Equal(element.AdjacentComponents, element.Terminals);
+            IComponent component = element;
+            Assert.Equal(component.AdjacentComponents, element.Terminals);
         }
     }
 }

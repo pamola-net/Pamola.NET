@@ -9,12 +9,8 @@ namespace Pamola
     /// Base <see cref="Pamola.Element"/> class for any and all circuit elements.
     /// </summary>
     public abstract class Element :
-        IComponent
+        Component
     {
-
-        //TODO: Inheriting from Component, rather than IComponent.
-
-
         private readonly List<Terminal> terminals = new List<Terminal>();
 
         /// <summary>
@@ -38,9 +34,10 @@ namespace Pamola
         /// <summary>
         /// Returns all <see cref="Pamola.IComponent"/> directly connected to this.
         /// </summary>
-        public IReadOnlyCollection<IComponent> AdjacentComponents { get => terminals; }
+        protected override IReadOnlyCollection<IComponent> AdjacentComponents => Terminals;
+
+        protected abstract override IReadOnlyCollection<Variable> Variables { get; }
 
 
-        public abstract IReadOnlyCollection<Variable> Variables { get; }
     }
 }

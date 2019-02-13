@@ -8,7 +8,7 @@ namespace Pamola
     /// <summary>
     /// Represents the connection between two or more terminals.
     /// </summary>
-    public class Node :
+    public sealed class Node :
         Component
     {
         /// <summary>
@@ -16,12 +16,17 @@ namespace Pamola
         /// </summary>
         public Complex Voltage { get; private set; }
 
-        //TODO: Check if private or internal
         internal List<Terminal> terminals = new List<Terminal>();
 
+        internal Node(){}
+
+        /// <summary>
+        /// Get all terminals connected to this node.
+        /// </summary>
         public IReadOnlyCollection<Terminal> Terminals { get => terminals; }
 
         protected override IReadOnlyCollection<IComponent> AdjacentComponents { get => Terminals; }
+
         protected override IReadOnlyCollection<Variable> Variables { get => new[] { new Variable(() => Voltage, value => Voltage = value) }; }
     }
 }
