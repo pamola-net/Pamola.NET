@@ -8,7 +8,7 @@ jobs:
     executor: dotnetcoreexecutor
     steps:
       - checkout
-      - run: dotnet build Pamola.NET/Pamola.NET.csproj
+      - run: dotnet build Source/Pamola.NET.csproj
   test:
     executor: dotnetcoreexecutor
     steps:
