@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Pamola
 {
@@ -11,10 +12,8 @@ namespace Pamola
         /// </summary>
         /// <param name="terminal">Analysed terminal.</param>
         /// <returns>Returns <c>true</c> if connected to any node. Otherwise, <c>false</c>.</returns>
-        public static bool IsConnected(this Terminal terminal)
-        {
-            return terminal.ThrowOnNull(nameof(terminal)).Node != null;
-        }
+        public static bool IsConnected(this Terminal terminal) => 
+            terminal.ThrowOnNull(nameof(terminal)).Node != null;
 
         /// <summary>
         /// Unbinds <paramref name="terminal"/> from its node. Do nothing if already unbinded.
@@ -22,11 +21,13 @@ namespace Pamola
         /// <param name="terminal">Analysed terminal.</param>
         public static void Disconnect(this Terminal terminal)
         {
-            var node = terminal.ThrowOnNull(nameof(terminal)).Node;
+            Node node = terminal.ThrowOnNull(nameof(terminal)).Node;
 
             node?.terminals.Remove(terminal);
 
             terminal.Node = null;
+
+            if (node?.Terminals.Count == 1) node.Terminals.First().Disconnect();
         }
 
         /// <summary>
@@ -34,7 +35,7 @@ namespace Pamola
         /// </summary>
         /// <param name="terminal">Analysed terminal.</param>
         /// <param name="node">Target node.</param>
-        /// <returns></returns>
+        /// <returns>Target node.</returns>
         public static Node ConnectTo(this Terminal terminal, Node node)
         {
             terminal.Disconnect();
@@ -51,21 +52,29 @@ namespace Pamola
         /// </summary>
         /// <param name="node">Target node.</param>
         /// <param name="terminal">Analysed terminal.</param>
-        /// <returns></returns>
-        public static Node ConnectTo(this Node node, Terminal terminal)
-        {
-            return terminal.ConnectTo(node);
-        }
+        /// <returns>Target node.</returns>
+        public static Node ConnectTo(this Node node, Terminal terminal) => 
+            terminal.ConnectTo(node);
 
         /// <summary>
         /// Binds two <see cref="Terminal"/> objets to the same node.
         /// </summary>
         /// <param name="source">Source terminal.</param>
         /// <param name="target">Target terminal.</param>
-        /// <returns></returns>
-        public static Node ConnectTo(this Terminal source, Terminal target)
+        /// <returns>A new node connected to both terminals.</returns>
+        public static Node ConnectTo(this Terminal source, Terminal target) =>
+            source.ConnectTo(new Node()).ConnectTo(target);
+
+        /// <summary>
+        /// Binds all terminals from both nodes in <paramref name="source"/>.
+        /// </summary>
+        /// <param name="source">Source node.</param>
+        /// <param name="target">Target node.</param>
+        /// <returns>Source node.</returns>
+        public static Node ConnectTo(this Node source, Node target)
         {
-            return source.ConnectTo(new Node()).ConnectTo(target);
+            target.Terminals.ToList().ForEach(terminal => terminal.ConnectTo(source));
+            return source;
         }
     }
 }

@@ -1,31 +1,48 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pamola.NET", "Pamola.NET\Pamola.NET.csproj", "{A03CC594-3957-4001-810C-7337D4C5F91A}"
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamola.NET", "Source\Pamola.NET.csproj", "{E3282410-6115-4CC4-AF10-6E194DF4AF65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamola.NET.UT", "Pamola.NET.UT\Pamola.NET.UT.csproj", "{0B808F09-20EE-41A3-BF28-C3E32E1A8268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pamola.NET.UT", "Tests\Pamola.NET.UT.csproj", "{16AE5CED-C321-4516-BBAC-7075DA95C609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A03CC594-3957-4001-810C-7337D4C5F91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A03CC594-3957-4001-810C-7337D4C5F91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A03CC594-3957-4001-810C-7337D4C5F91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A03CC594-3957-4001-810C-7337D4C5F91A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B808F09-20EE-41A3-BF28-C3E32E1A8268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B808F09-20EE-41A3-BF28-C3E32E1A8268}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B808F09-20EE-41A3-BF28-C3E32E1A8268}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B808F09-20EE-41A3-BF28-C3E32E1A8268}.Release|Any CPU.Build.0 = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6276B78E-AAD4-483D-B7EC-ED581A1B0E2D}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|x64.Build.0 = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Debug|x86.Build.0 = Debug|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|x64.ActiveCfg = Release|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|x64.Build.0 = Release|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|x86.ActiveCfg = Release|Any CPU
+		{E3282410-6115-4CC4-AF10-6E194DF4AF65}.Release|x86.Build.0 = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|x64.Build.0 = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Debug|x86.Build.0 = Debug|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|x64.ActiveCfg = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|x64.Build.0 = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|x86.ActiveCfg = Release|Any CPU
+		{16AE5CED-C321-4516-BBAC-7075DA95C609}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

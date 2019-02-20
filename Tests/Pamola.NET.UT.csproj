@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pamola.NET\Pamola.NET.csproj" />
+    <ProjectReference Include="..\Source\Pamola.NET.csproj" />
   </ItemGroup>
 
 </Project>
