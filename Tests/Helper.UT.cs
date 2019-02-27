@@ -10,14 +10,14 @@ namespace Pamola.UT
     public class HelperUT
     {
         [Fact]
-        public void CheckIfThrowsOnNull()
+        public void ThrowsOnNull()
         {
             object obj = null;
             Assert.Throws<ArgumentNullException>(() => obj.ThrowOnNull());
         }
 
         [Fact]
-        public void CheckIfChainsObjects()
+        public void ChainsObjects()
         {
             object obj = new object();
             Assert.Equal(obj, obj.ThrowOnNull());

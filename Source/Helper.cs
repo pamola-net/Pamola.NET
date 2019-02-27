@@ -18,10 +18,7 @@ namespace Pamola
         /// <returns></returns>
         public static T ThrowOnNull<T>(this T source,string parameterName = "")
         {
-            if (source==null)
-            {
-                throw new ArgumentNullException(parameterName);
-            }
+            if (source==null) throw new ArgumentNullException(parameterName);            
             return source;
         }
     }

@@ -11,7 +11,7 @@ namespace Pamola
     public abstract class Element :
         Component
     {
-        private readonly List<Terminal> terminals = new List<Terminal>();
+        protected readonly List<Terminal> terminals = new List<Terminal>();
 
         /// <summary>
         /// Creates an <see cref="Pamola.Element"/> with the given amount of terminals.
@@ -24,6 +24,15 @@ namespace Pamola
                 throw new ArgumentOutOfRangeException(nameof(numberOfTerminals), numberOfTerminals, "Number of terminals should be a positive non null value.");
 
             terminals.AddRange(Enumerable.Range(0, numberOfTerminals).Select(_ => new Terminal(this)));
+        }
+
+        /// <summary>
+        /// Creates an <see cref="Pamola.Element"/> containing a pre-existing list of terminals.
+        /// </summary>
+        /// <param name="terminals">Pre-existing list of terminals.</param>
+        protected Element(IEnumerable<Terminal> terminals)
+        {
+            this.terminals.AddRange(terminals);
         }
 
         /// <summary>

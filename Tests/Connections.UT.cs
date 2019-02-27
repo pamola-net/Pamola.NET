@@ -7,7 +7,7 @@ namespace Pamola.UT
     public class ConnectionsUT
     {
         [Fact]
-        public void ChecksIsConnected()
+        public void IsConnected()
         {
             MockedElement element = new MockedElement(2);
             Assert.All(element.Terminals, (terminal) => Assert.False(terminal.IsConnected()));
@@ -19,11 +19,11 @@ namespace Pamola.UT
         }
 
         [Fact]
-        public void ChecksDisconnect()
+        public void Disconnection()
         {
             MockedElement element = new MockedElement(2);
             var terminals = element.Terminals.ToList();
-            var node = terminals[0].ConnectTo(terminals[1]);
+            Node node = terminals[0].ConnectTo(terminals[1]);
 
             terminals[0].Disconnect();
             Assert.All(element.Terminals, (terminal) => Assert.False(terminal.IsConnected()));
@@ -39,7 +39,7 @@ namespace Pamola.UT
         {
             MockedElement element = new MockedElement(2);
             var terminals = element.Terminals.ToList();
-            var node = terminals[0].ConnectTo(terminals[1]);
+            Node node = terminals[0].ConnectTo(terminals[1]);
 
             Assert.All(terminals, terminal => Assert.Equal(node, terminal.Node));
         }
@@ -56,9 +56,9 @@ namespace Pamola.UT
             var terminals1 = element1.Terminals.ToList();
             var terminals2 = element2.Terminals.ToList();
 
-            var previousNode = terminals1.First().ConnectTo(terminals2.First());
+            Node previousNode = terminals1.First().ConnectTo(terminals2.First());
 
-            var newNode = terminals1.Last().ConnectTo(terminals2.First());
+            Node newNode = terminals1.Last().ConnectTo(terminals2.First());
 
             Assert.Empty(previousNode.Terminals);
 
@@ -66,6 +66,32 @@ namespace Pamola.UT
 
             Assert.Equal(newNode, terminals1.Last().Node);
             Assert.Equal(newNode, terminals2.First().Node);
+        }
+
+        /// <summary>
+        /// Checks a connection between two nodes.
+        /// </summary>
+        [Fact]
+        public void ConnectN2N()
+        {
+            MockedElement element1 = new MockedElement(2);
+            MockedElement element2 = new MockedElement(2);
+
+            var terminals1 = element1.Terminals.ToList();
+            var terminals2 = element2.Terminals.ToList();
+
+            Node node1 = terminals1.First().ConnectTo(terminals1.Last());
+            Node node2 = terminals2.First().ConnectTo(terminals2.Last());
+
+            Node node3 = node1.ConnectTo(node2);
+
+            Assert.Equal(node3, node1);
+
+            Assert.Empty(node2.Terminals);
+
+            Assert.Equal(terminals1.Union(terminals2), node1.Terminals);
+
+            Assert.All(node1.Terminals, (terminal) => Assert.True(terminal.IsConnected()));
         }
     }
 }
