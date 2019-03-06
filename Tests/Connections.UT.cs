@@ -93,5 +93,19 @@ namespace Pamola.UT
 
             Assert.All(node1.Terminals, (terminal) => Assert.True(terminal.IsConnected()));
         }
+
+        /// <summary>
+        /// Terminal cannot connect to himself.
+        /// </summary>
+        [Fact]
+        public void ConnectT2Self()
+        {
+            MockedElement element = new MockedElement(1);
+       
+            var terminal = element.Terminals.First();
+
+            Assert.Throws<InvalidOperationException>(() => terminal.ConnectTo(terminal));
+
+        }
     }
 }

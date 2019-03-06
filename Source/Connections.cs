@@ -62,8 +62,12 @@ namespace Pamola
         /// <param name="source">Source terminal.</param>
         /// <param name="target">Target terminal.</param>
         /// <returns>A new node connected to both terminals.</returns>
-        public static Node ConnectTo(this Terminal source, Terminal target) =>
-            source.ConnectTo(new Node()).ConnectTo(target);
+        public static Node ConnectTo(this Terminal source, Terminal target)
+        {
+            if (source.Equals(target)) throw new InvalidOperationException("Target terminal must not be equal to source terminal.");
+
+            return source.ConnectTo(new Node()).ConnectTo(target);
+        }
 
         /// <summary>
         /// Binds all terminals from both nodes in <paramref name="source"/>.
