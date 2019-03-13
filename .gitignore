@@ -258,4 +258,16 @@ paket-files/
 
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
-*.pyc
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# CodeRush
+.cr/
+
+# Python Tools for Visual Studio (PTVS)
+__pycache__/
+*.pyc*.pyc
+
+.coverage

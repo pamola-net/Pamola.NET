@@ -14,7 +14,17 @@ jobs:
     steps:
       - checkout
       - run: dotnet test
-
+  code_coverage:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: >
+          dotnet test 
+          /p:CollectCoverage=true 
+          /p:CoverletOutputFormat=lcov 
+          /p:CoverletOutput=../.coverage/lcov 
+          /p:Threshold=90
+    
 workflows:
   version: 2.1
   build_test:
@@ -23,3 +33,6 @@ workflows:
       - test:
           requires:
             - build
+      - code_coverage:
+          requires:
+            - test
