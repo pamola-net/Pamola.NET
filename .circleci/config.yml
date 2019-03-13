@@ -20,6 +20,7 @@ jobs:
       - checkout
       - run: >
           dotnet test 
+          Pamola.NET.sln
           /p:CollectCoverage=true 
           /p:CoverletOutputFormat=lcov 
           /p:CoverletOutput=../.coverage/lcov 
