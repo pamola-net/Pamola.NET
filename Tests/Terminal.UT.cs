@@ -48,5 +48,25 @@ namespace Pamola.UT
             Assert.Equal(component.AdjacentComponents, new[] { (IComponent)element, node });
         }
 
+        [Fact]
+        public void TerminalVariablesHasOnlyOneVariable()
+        {
+            IComponent terminal = new MockedElement(1).Terminals.First();
+            Assert.Single(terminal.Variables);
+        }
+
+        [Fact]
+        public void TerminalVariablesSetsCurrent()
+        {
+            var terminal = new MockedElement(1).Terminals.First();
+            IComponent component = terminal;
+            var current = new System.Numerics.Complex(3.0, 4.0);
+
+            component.Variables.First().Setter(current);
+
+            Assert.Equal(current, terminal.Current);
+        }
+
+
     }
 }

@@ -17,7 +17,9 @@ namespace Pamola
             Components = components.ToList();
         }
 
-        protected override IReadOnlyCollection<Variable> Variables => throw new NotImplementedException();
+        protected override IReadOnlyCollection<Variable> Variables => Components.SelectMany(component => component.Variables).ToList();
+
+        //TODO: Unit tests this Method.
 
     }
 }

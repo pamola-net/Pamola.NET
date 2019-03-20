@@ -107,5 +107,18 @@ namespace Pamola.UT
             Assert.Throws<InvalidOperationException>(() => terminal.ConnectTo(terminal));
 
         }
+
+        [Fact]
+        public void ConnectAllThrowsOnLessThanTwo()
+        {
+            Assert.Throws<ArgumentException>(() => new MockedElement(1).Terminals.ConnectAll());
+        }
+
+        [Fact]
+        public void ConnectAllWorks()
+        {
+            var terminals = new MockedElement(2).Terminals;
+            Assert.Equal(terminals, terminals.ConnectAll().Terminals); 
+        }
     }
 }

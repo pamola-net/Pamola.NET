@@ -80,5 +80,22 @@ namespace Pamola
             target.Terminals.ToList().ForEach(terminal => terminal.ConnectTo(source));
             return source;
         }
+
+        /// <summary>
+        /// Binds all terminals in <paramref name="terminals"/>.
+        /// </summary>
+        /// <param name="terminals">List of terminals.</param>
+        /// <returns>Binding <see cref="Node"/>.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when list of terminals has less than two items.</exception> 
+        public static Node ConnectAll(this IEnumerable<Terminal> terminals)
+        {
+            if (terminals.Count() < 2) throw new ArgumentException("The list of terminals must have at least 2 terminals.", nameof(terminals));
+
+            var node = terminals.ElementAt(0).ConnectTo(terminals.ElementAt(1));
+
+            foreach (var terminal in terminals.Skip(2)) node.ConnectTo(terminal);
+
+            return node;
+        }
     }
 }
