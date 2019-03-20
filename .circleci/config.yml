@@ -24,6 +24,7 @@ jobs:
           /p:CollectCoverage=true 
           /p:CoverletOutputFormat=lcov 
           /p:CoverletOutput=../.coverage/lcov 
+          /p:Include=[Pamola.NET]*
           /p:Threshold=90
     
 workflows:
