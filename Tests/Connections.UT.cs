@@ -111,7 +111,7 @@ namespace Pamola.UT
         [Fact]
         public void ConnectAllThrowsOnLessThanTwo()
         {
-            Assert.Throws<ArgumentException>(() => new MockedElement(1).Terminals.ConnectAll());
+            Assert.Throws<ArgumentOutOfRangeException>(() => new MockedElement(1).Terminals.ConnectAll());
         }
 
         [Fact]
@@ -120,5 +120,7 @@ namespace Pamola.UT
             var terminals = new MockedElement(2).Terminals;
             Assert.Equal(terminals, terminals.ConnectAll().Terminals); 
         }
+
+
     }
 }

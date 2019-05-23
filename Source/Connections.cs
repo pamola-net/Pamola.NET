@@ -89,7 +89,7 @@ namespace Pamola
         /// <exception cref="ArgumentOutOfRangeException">Thrown when list of terminals has less than two items.</exception> 
         public static Node ConnectAll(this IEnumerable<Terminal> terminals)
         {
-            if (terminals.Count() < 2) throw new ArgumentException("The list of terminals must have at least 2 terminals.", nameof(terminals));
+            if (terminals.Count() < 2) throw new ArgumentOutOfRangeException("The list of terminals must have at least 2 terminals.", nameof(terminals));
 
             var node = terminals.ElementAt(0).ConnectTo(terminals.ElementAt(1));
 

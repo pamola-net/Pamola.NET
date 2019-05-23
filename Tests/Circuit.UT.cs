@@ -62,5 +62,28 @@ namespace Pamola.UT
             Assert.Empty(components.Except(circuit.Components));
             Assert.Empty(circuit.Components.Except(components));
         }
+
+        [Fact]
+        public void VariablesContainsAllComponentsVariables()
+        {
+            MockedElement element1 = new MockedElement(2);
+            MockedElement element2 = new MockedElement(2);
+
+            var circuit = element1.Terminals.First().ConnectTo(element2.Terminals.First()).GetCircuit();
+
+            var circuitVariables = ((IComponent)circuit).Variables;
+
+            var componentsVariables = circuit.Components.SelectMany(component => component.Variables);
+
+            var complex = new System.Numerics.Complex(1.0, 1.0);
+
+            componentsVariables.ToList().ForEach(variable => variable.Setter(complex));
+
+            Assert.NotEmpty(circuitVariables);
+            Assert.NotEmpty(componentsVariables);
+            Assert.All(circuitVariables, variable => Assert.Equal(complex, variable.Getter()));
+
+        }
+
     }
 }

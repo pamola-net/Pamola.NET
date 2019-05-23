@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Pamola.UT
 {
@@ -16,6 +17,6 @@ namespace Pamola.UT
         /// <param name="numberOfTerminals">Number of terminals for testing.</param>
         public MockedElement(int numberOfTerminals) : base(numberOfTerminals) { }
 
-        protected override IReadOnlyCollection<Variable> Variables => throw new NotImplementedException();
+        protected override IReadOnlyCollection<Variable> Variables => new List<Variable>();
     }
 }
