@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using System.Linq;
 
 namespace Pamola
 {
@@ -28,5 +29,12 @@ namespace Pamola
         protected override IReadOnlyCollection<IComponent> AdjacentComponents { get => Terminals; }
 
         protected override IReadOnlyCollection<Variable> Variables { get => new[] { new Variable(() => Voltage, value => Voltage = value) }; }
+
+        protected override IReadOnlyCollection<Func<Complex>> Equations => new List<Func<Complex>>() { CurrentSum };
+
+        internal Complex CurrentSum()
+        {
+            return Terminals.Select(t => t.Current).Aggregate((l, r) => l + r);
+        }
     }
 }

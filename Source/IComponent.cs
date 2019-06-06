@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Numerics;
+
 
 namespace Pamola
 {
@@ -18,7 +20,11 @@ namespace Pamola
         /// A collection of appropriate variables relative to the nature of this component.
         /// </summary>
         IReadOnlyCollection<Variable> Variables { get; }
-        
+
+        /// <summary>
+        /// A collection of appropriate equations relative to the nature of this component.
+        /// </summary>
+        IReadOnlyCollection<Func<Complex>> Equations { get; }
 
     }
 }

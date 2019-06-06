@@ -85,5 +85,24 @@ namespace Pamola.UT
 
         }
 
+        [Fact]
+        public void EquationsContainsAllComponentsEquations()
+        {
+            MockedElement element1 = new MockedElement(2);
+            MockedElement element2 = new MockedElement(2);
+
+            var circuit = element1.Terminals.First().ConnectTo(element2.Terminals.First()).GetCircuit();
+
+            var circuitEquations = ((IComponent)circuit).Equations;
+
+            var componentsEquations = circuit.Components.SelectMany(component => component.Equations);
+
+            Assert.NotEmpty(circuitEquations);
+            Assert.NotEmpty(componentsEquations);
+            Assert.Empty(circuitEquations.Except(componentsEquations));
+            Assert.Empty(componentsEquations.Except(circuitEquations));
+
+        }
+
     }
 }

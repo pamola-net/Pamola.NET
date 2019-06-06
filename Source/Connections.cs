@@ -16,7 +16,7 @@ namespace Pamola
             terminal.ThrowOnNull(nameof(terminal)).Node != null;
 
         /// <summary>
-        /// Unbinds <paramref name="terminal"/> from its node. Do nothing if already unbinded.
+        /// Unbinds <paramref name="terminal"/> from its node. Does nothing if already unbinded.
         /// </summary>
         /// <param name="terminal">Analysed terminal.</param>
         public static void Disconnect(this Terminal terminal)

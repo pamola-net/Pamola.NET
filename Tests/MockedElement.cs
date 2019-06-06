@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Numerics;
 
 namespace Pamola.UT
 {
@@ -18,5 +19,7 @@ namespace Pamola.UT
         public MockedElement(int numberOfTerminals) : base(numberOfTerminals) { }
 
         protected override IReadOnlyCollection<Variable> Variables => new List<Variable>();
+
+        protected override IReadOnlyCollection<Func<Complex>> Equations => new List<Func<Complex>>();
     }
 }

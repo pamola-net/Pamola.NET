@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Numerics;
 
 namespace Pamola
 {
@@ -47,6 +48,7 @@ namespace Pamola
 
         protected abstract override IReadOnlyCollection<Variable> Variables { get; }
 
+        protected abstract override IReadOnlyCollection<Func<Complex>> Equations { get; }
 
     }
 }

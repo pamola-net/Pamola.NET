@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Numerics;
 
 namespace Pamola
 {
@@ -21,9 +22,16 @@ namespace Pamola
         /// </summary>
         protected virtual IReadOnlyCollection<Variable> Variables { get; } = Enumerable.Empty<Variable>().ToArray();
 
+        /// <summary>
+        /// A collection of appropriate equations relative to the nature of this component.
+        /// </summary>
+        protected virtual IReadOnlyCollection<Func<Complex>> Equations { get; } = Enumerable.Empty<Func<Complex>>().ToArray();
+
         IReadOnlyCollection<IComponent> IComponent.AdjacentComponents => AdjacentComponents;
         
         IReadOnlyCollection<Variable> IComponent.Variables => Variables;
+
+        IReadOnlyCollection<Func<Complex>> IComponent.Equations => Equations;
 
     }
 }

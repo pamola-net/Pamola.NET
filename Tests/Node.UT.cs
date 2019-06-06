@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Xunit;
+using System.Numerics;
 
 namespace Pamola.UT
 {
@@ -36,6 +37,17 @@ namespace Pamola.UT
             component.Variables.First().Setter(voltage);
 
             Assert.Equal(voltage, node.Voltage);
+        }
+
+        [Fact]
+        public void NodeObeysKirchhofsCurrentLaw()
+        {
+            var node = new MockedElement(3).Terminals.ConnectAll();
+
+            node.Terminals.Cast<IComponent>().SelectMany(t => t.Variables).ToList().ForEach(t => t.Setter(new System.Numerics.Complex(1.0, -1.0)));
+            var equation = ((IComponent)node).Equations.First();
+
+            Assert.Equal(new Complex(3.0, -3.0), equation());
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Numerics;
 
 namespace Pamola
 {
@@ -19,6 +20,6 @@ namespace Pamola
         
         protected override IReadOnlyCollection<Variable> Variables => Components.SelectMany(component => component.Variables).ToList();
 
-        //TODO: Find which branch is not being tested by code coverage.
+        protected override IReadOnlyCollection<Func<Complex>> Equations => Components.SelectMany(component => component.Equations).ToList();
     }
 }

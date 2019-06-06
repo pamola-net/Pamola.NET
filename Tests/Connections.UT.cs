@@ -101,7 +101,7 @@ namespace Pamola.UT
         public void ConnectT2Self()
         {
             MockedElement element = new MockedElement(1);
-       
+
             var terminal = element.Terminals.First();
 
             Assert.Throws<InvalidOperationException>(() => terminal.ConnectTo(terminal));
@@ -114,13 +114,16 @@ namespace Pamola.UT
             Assert.Throws<ArgumentOutOfRangeException>(() => new MockedElement(1).Terminals.ConnectAll());
         }
 
-        [Fact]
-        public void ConnectAllWorks()
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        public void ConnectAllWorks(int numberOfTerminals)
         {
-            var terminals = new MockedElement(2).Terminals;
+            var terminals = new MockedElement(numberOfTerminals).Terminals;
             Assert.Equal(terminals, terminals.ConnectAll().Terminals); 
         }
 
-
+        
     }
 }
