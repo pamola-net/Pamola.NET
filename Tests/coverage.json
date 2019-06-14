@@ -1,0 +1,723 @@
+{
+  "Pamola.NET.dll": {
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Circuit.cs": {
+      "Pamola.Circuit": {
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Circuit::get_Components()": {
+          "Lines": {
+            "11": 14
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.Circuit::get_Variables()": {
+          "Lines": {
+            "21": 8
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.Circuit::get_Equations()": {
+          "Lines": {
+            "23": 8
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 23,
+              "Offset": 12,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Pamola.Circuit::.ctor(System.Collections.Generic.IEnumerable`1<Pamola.IComponent>)": {
+          "Lines": {
+            "14": 5,
+            "15": 5,
+            "16": 25,
+            "17": 5,
+            "18": 5,
+            "19": 5
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 5
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\CircuitFactory.cs": {
+      "Pamola.CircuitFactory": {
+        "Pamola.Circuit Pamola.CircuitFactory::GetCircuit(Pamola.IComponent)": {
+          "Lines": {
+            "15": 5,
+            "16": 5,
+            "17": 5,
+            "18": 5,
+            "19": 5
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.CircuitFactory::InsertInternals(Pamola.IComponent,System.Collections.Generic.ISet`1<Pamola.IComponent>)": {
+          "Lines": {
+            "22": 69,
+            "23": 69,
+            "24": 34,
+            "25": 230,
+            "26": 64,
+            "27": 64,
+            "28": 64,
+            "29": 34,
+            "30": 69
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 34
+            },
+            {
+              "Line": 25,
+              "Offset": 51,
+              "EndOffset": 28,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 64
+            },
+            {
+              "Line": 25,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 34
+            },
+            {
+              "Line": 23,
+              "Offset": 10,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 69
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Component.cs": {
+      "Pamola.Component": {
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Component::get_AdjacentComponents()": {
+          "Lines": {
+            "18": 452
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.Component::get_Variables()": {
+          "Lines": {
+            "23": 452
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.Component::get_Equations()": {
+          "Lines": {
+            "28": 464
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Component::Pamola.IComponent.get_AdjacentComponents()": {
+          "Lines": {
+            "30": 40
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.Component::Pamola.IComponent.get_Variables()": {
+          "Lines": {
+            "32": 31
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.Component::Pamola.IComponent.get_Equations()": {
+          "Lines": {
+            "34": 28
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Connections.cs": {
+      "Pamola.Connections": {
+        "System.Boolean Pamola.Connections::IsConnected(Pamola.Terminal)": {
+          "Lines": {
+            "16": 31
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.Connections::Disconnect(Pamola.Terminal)": {
+          "Lines": {
+            "23": 54,
+            "24": 54,
+            "26": 54,
+            "28": 54,
+            "30": 57,
+            "31": 54
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 19,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            },
+            {
+              "Line": 26,
+              "Offset": 19,
+              "EndOffset": 36,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 54
+            },
+            {
+              "Line": 30,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 48
+            },
+            {
+              "Line": 30,
+              "Offset": 45,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 30,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 3
+            },
+            {
+              "Line": 30,
+              "Offset": 66,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 54
+            }
+          ]
+        },
+        "Pamola.Node Pamola.Connections::ConnectTo(Pamola.Terminal,Pamola.Node)": {
+          "Lines": {
+            "40": 50,
+            "41": 50,
+            "43": 50,
+            "45": 50,
+            "47": 50,
+            "48": 50
+          },
+          "Branches": []
+        },
+        "Pamola.Node Pamola.Connections::ConnectTo(Pamola.Node,Pamola.Terminal)": {
+          "Lines": {
+            "57": 27
+          },
+          "Branches": []
+        },
+        "Pamola.Node Pamola.Connections::ConnectTo(Pamola.Terminal,Pamola.Terminal)": {
+          "Lines": {
+            "66": 22,
+            "67": 23,
+            "69": 21,
+            "70": 21
+          },
+          "Branches": [
+            {
+              "Line": 67,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 67,
+              "Offset": 10,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 21
+            }
+          ]
+        },
+        "Pamola.Node Pamola.Connections::ConnectTo(Pamola.Node,Pamola.Node)": {
+          "Lines": {
+            "79": 1,
+            "80": 3,
+            "81": 1,
+            "82": 1
+          },
+          "Branches": []
+        },
+        "Pamola.Node Pamola.Connections::ConnectAll(System.Collections.Generic.IEnumerable`1<Pamola.Terminal>)": {
+          "Lines": {
+            "91": 7,
+            "92": 8,
+            "94": 6,
+            "96": 30,
+            "98": 6,
+            "99": 6
+          },
+          "Branches": [
+            {
+              "Line": 92,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 92,
+              "Offset": 12,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6
+            },
+            {
+              "Line": 96,
+              "Offset": 87,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 96,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 6
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Dipole.cs": {
+      "Pamola.Dipole": {
+        "Pamola.Terminal Pamola.Dipole::get_Positive()": {
+          "Lines": {
+            "18": 8
+          },
+          "Branches": []
+        },
+        "Pamola.Terminal Pamola.Dipole::get_Negative()": {
+          "Lines": {
+            "20": 8
+          },
+          "Branches": []
+        },
+        "System.Numerics.Complex Pamola.Dipole::CurrentBehaviour()": {
+          "Lines": {
+            "22": 4
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.Dipole::get_Equations()": {
+          "Lines": {
+            "26": 4
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.Dipole::.ctor()": {
+          "Lines": {
+            "15": 4,
+            "16": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Element.cs": {
+      "Pamola.Element": {
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Terminal> Pamola.Element::get_Terminals()": {
+          "Lines": {
+            "42": 86
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Element::get_AdjacentComponents()": {
+          "Lines": {
+            "47": 12
+          },
+          "Branches": []
+        },
+        "Pamola.Terminal Pamola.Element::<.ctor>b__1_0(System.Int32)": {
+          "Lines": {
+            "27": 424
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.Element::.ctor(System.Int32)": {
+          "Lines": {
+            "15": 52,
+            "22": 47,
+            "23": 47,
+            "24": 47,
+            "25": 2,
+            "28": 45
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 28,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 45
+            }
+          ]
+        },
+        "System.Void Pamola.Element::.ctor(System.Collections.Generic.IEnumerable`1<Pamola.Terminal>)": {
+          "Lines": {
+            "34": 5,
+            "35": 5,
+            "36": 5,
+            "37": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Helper.cs": {
+      "Pamola.Helper": {
+        "T Pamola.Helper::ThrowOnNull(T,System.String)": {
+          "Lines": {
+            "20": 137,
+            "21": 138,
+            "22": 136,
+            "23": 136
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 12,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 136
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\IdealResistor.cs": {
+      "Pamola.IdealResistor": {
+        "System.Double Pamola.IdealResistor::get_Resistance()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.Numerics.Complex Pamola.IdealResistor::OhmsLaw()": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 12,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 33,
+              "EndOffset": 49,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.IdealResistor::get_Variables()": {
+          "Lines": {
+            "29": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.IdealResistor::get_DipoleEquations()": {
+          "Lines": {
+            "31": 0
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.IdealResistor::.ctor(System.Double)": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Node.cs": {
+      "Pamola.Node": {
+        "System.Numerics.Complex Pamola.Node::get_Voltage()": {
+          "Lines": {
+            "18": 4
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Terminal> Pamola.Node::get_Terminals()": {
+          "Lines": {
+            "27": 27
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Node::get_AdjacentComponents()": {
+          "Lines": {
+            "29": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.Node::get_Variables()": {
+          "Lines": {
+            "31": 8
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<System.Func`1<System.Numerics.Complex>> Pamola.Node::get_Equations()": {
+          "Lines": {
+            "33": 5
+          },
+          "Branches": []
+        },
+        "System.Numerics.Complex Pamola.Node::CurrentSum()": {
+          "Lines": {
+            "36": 1,
+            "37": 6,
+            "38": 1
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 49,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void Pamola.Node::.ctor()": {
+          "Lines": {
+            "20": 21,
+            "22": 63
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Terminal.cs": {
+      "Pamola.Terminal": {
+        "System.Numerics.Complex Pamola.Terminal::get_Current()": {
+          "Lines": {
+            "17": 32
+          },
+          "Branches": []
+        },
+        "Pamola.Element Pamola.Terminal::get_Element()": {
+          "Lines": {
+            "22": 402
+          },
+          "Branches": []
+        },
+        "Pamola.Node Pamola.Terminal::get_Node()": {
+          "Lines": {
+            "27": 218
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.IComponent> Pamola.Terminal::get_AdjacentComponents()": {
+          "Lines": {
+            "38": 66
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 30,
+              "EndOffset": 55,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 22
+            }
+          ]
+        },
+        "System.Collections.Generic.IReadOnlyCollection`1<Pamola.Variable> Pamola.Terminal::get_Variables()": {
+          "Lines": {
+            "40": 41
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.Terminal::.ctor(Pamola.Element)": {
+          "Lines": {
+            "33": 379,
+            "34": 379,
+            "35": 379,
+            "36": 379
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\jeanl\\Source\\Repos\\JeanLColombo\\Pamola.NET\\Source\\Variable.cs": {
+      "Pamola.Variable": {
+        "System.Func`1<System.Numerics.Complex> Pamola.Variable::get_Getter()": {
+          "Lines": {
+            "27": 55
+          },
+          "Branches": []
+        },
+        "System.Action`1<System.Numerics.Complex> Pamola.Variable::get_Setter()": {
+          "Lines": {
+            "32": 62
+          },
+          "Branches": []
+        },
+        "System.Void Pamola.Variable::.ctor(System.Func`1<System.Numerics.Complex>,System.Action`1<System.Numerics.Complex>)": {
+          "Lines": {
+            "18": 38,
+            "19": 38,
+            "20": 38,
+            "21": 38,
+            "22": 38
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}
