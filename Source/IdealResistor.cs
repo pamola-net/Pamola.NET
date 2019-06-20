@@ -12,6 +12,9 @@ namespace Pamola
 
         public IdealResistor(double resistance)
         {
+            if (resistance < 0.0)
+                throw new ArgumentOutOfRangeException(nameof(resistance), resistance, "Negative resistance values are phisically impossible.");
+
             Resistance = resistance; 
         }
 
@@ -29,8 +32,7 @@ namespace Pamola
         protected override IReadOnlyCollection<Variable> Variables => new List<Variable>();
 
         protected override IReadOnlyCollection<Func<Complex>> DipoleEquations => new List<Func<Complex>>() { OhmsLaw };
-
-        //TODO: Unit tests for IdealResistor.
+        
         //TODO: Create a Ideal Voltage Source.
     }
 }
