@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using System.Collections.Generic;
 using Xunit;
+using Pamola.Components;
 
 namespace Pamola.UT
 {

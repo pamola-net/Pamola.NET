@@ -4,10 +4,10 @@ using System.Text;
 using System.Linq;
 using System.Numerics;
 
-namespace Pamola
+namespace Pamola.Components
 {
     /// <summary>
-    /// Implements an abstract <see cref="Pamola.Dipole"/> circuit element.
+    /// Implements an abstract <see cref="Pamola.Components.Dipole"/> circuit element.
     /// </summary>
     public abstract class Dipole : 
         Element

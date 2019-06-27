@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Numerics;
 
-namespace Pamola
+namespace Pamola.Components
 {
     public class IdealResistor : 
         Dipole

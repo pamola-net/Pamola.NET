@@ -6,4 +6,8 @@
     <Authors>Jean L Colombo, Johni Michels</Authors>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>./../bin</OutputPath>
+  </PropertyGroup>
+
 </Project>
