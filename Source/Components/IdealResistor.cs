@@ -13,7 +13,10 @@ namespace Pamola.Components
         public IdealResistor(double resistance)
         {
             if (resistance < 0.0)
-                throw new ArgumentOutOfRangeException(nameof(resistance), resistance, "Negative resistance values are phisically impossible.");
+                throw new ArgumentOutOfRangeException(
+                    nameof(resistance),
+                    resistance,
+                    "Negative resistance values are phisically impossible.");
 
             Resistance = resistance; 
         }
@@ -21,6 +24,8 @@ namespace Pamola.Components
         private Complex OhmsLaw()
         {
             if (!Positive.IsConnected() || !Negative.IsConnected()) return new Complex();
+
+            //TODO: Check if new Complex or Exception
 
             var V = Positive.Node.Voltage - Negative.Node.Voltage;
             var I = Positive.Current;
@@ -33,6 +38,6 @@ namespace Pamola.Components
 
         protected override IReadOnlyCollection<Func<Complex>> DipoleEquations => new List<Func<Complex>>() { OhmsLaw };
         
-        //TODO: Create a Ideal Voltage Source.
+        //TODO: Create an Ideal Voltage Source.
     }
 }

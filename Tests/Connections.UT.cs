@@ -123,7 +123,5 @@ namespace Pamola.UT
             var terminals = new MockedElement(numberOfTerminals).Terminals;
             Assert.Equal(terminals, terminals.ConnectAll().Terminals); 
         }
-
-        
     }
 }
