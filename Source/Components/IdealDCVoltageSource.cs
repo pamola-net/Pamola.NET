@@ -18,7 +18,6 @@ namespace Pamola.Components
         private Complex VoltageDrop()
         {
             if (!Positive.IsConnected() || !Negative.IsConnected()) return new Complex();
-                //TODO: Check if new Complex or Exception
 
             var V = Positive.Node.Voltage - Negative.Node.Voltage;
 

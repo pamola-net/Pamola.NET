@@ -14,26 +14,26 @@ namespace Pamola
             var equations = component.Equations;
             var variables = component.Variables;
 
-            // [complex] -> set all variables
-            // listA = [1,2,3,4]
-            // listB = [10,15,14,18]
-            // listC = listA.Zip(listB, (A, B) => B-A)
-            // print(listC)
-            // [9, 13, 11, 14] 
+            void SetState(IReadOnlyList<Complex> values)
+            {
+                variables.Zip(
+                    values,
+                    (variable, value) =>
+                    {
+                        variable.Setter(value);
+                        return value;
+                    }).ToList();
+            }
 
-            solver.Solve(
+            var solvedState = solver.Solve(
                 equations.Select(equation => new Func<IReadOnlyList<Complex>, Complex>(
                     values =>
                     {
-                        variables.Zip(
-                            values, 
-                            (variable, value) => 
-                            { 
-                                variable.Setter(value); 
-                                return value; 
-                            }).ToList();
+                        SetState(values);
                         return equation();
                     })).ToList());
+
+            SetState(solvedState);
 
             //TODO: Insert a separate method to set all variables in a circuit.
             //TODO: Finish solver class/interface.

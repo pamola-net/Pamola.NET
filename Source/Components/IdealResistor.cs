@@ -25,8 +25,6 @@ namespace Pamola.Components
         {
             if (!Positive.IsConnected() || !Negative.IsConnected()) return new Complex();
 
-            //TODO: Check if new Complex or Exception
-
             var V = Positive.Node.Voltage - Negative.Node.Voltage;
             var I = Positive.Current;
             var R = Resistance;
