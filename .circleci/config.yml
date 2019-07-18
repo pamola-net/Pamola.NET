@@ -26,7 +26,23 @@ jobs:
           /p:CoverletOutput=../.coverage/lcov 
           /p:Include=[Pamola.NET]*
           /p:Threshold=90
-    
+  deploy:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: >
+          dotnet pack
+          Source/Pamola.NET.csproj
+          -c Release
+          --include-source
+          --include-symbols
+          -o ../nuget
+      - run: >
+          dotnet nuget push 
+          nuget/*.nupkg
+          -s https://api.nuget.org/v3/index.json
+          -k ${NUGET_API_KEY}
+              
 workflows:
   version: 2.1
   build_test:
@@ -38,3 +54,10 @@ workflows:
       - code_coverage:
           requires:
             - test
+      - deploy:
+          requires:
+            - code_coverage
+          filters:
+            branches:
+              only:
+                - master
