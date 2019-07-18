@@ -1,0 +1,63 @@
+version: 2.1
+executors:
+  dotnetcoreexecutor:
+    docker:
+      - image: microsoft/dotnet:2.2-sdk
+jobs:
+  build:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: dotnet build Source/Pamola.NET.csproj
+  test:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: dotnet test
+  code_coverage:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: >
+          dotnet test 
+          Pamola.NET.sln
+          /p:CollectCoverage=true 
+          /p:CoverletOutputFormat=lcov 
+          /p:CoverletOutput=../.coverage/lcov 
+          /p:Include=[Pamola.NET]*
+          /p:Threshold=90
+  deploy:
+    executor: dotnetcoreexecutor
+    steps:
+      - checkout
+      - run: >
+          dotnet pack
+          Source/Pamola.NET.csproj
+          -c Release
+          --include-source
+          --include-symbols
+          -o ../nuget
+      - run: >
+          dotnet nuget push 
+          nuget/*.nupkg
+          -s https://api.nuget.org/v3/index.json
+          -k ${NUGET_API_KEY}
+              
+workflows:
+  version: 2.1
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - code_coverage:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - code_coverage
+          filters:
+            branches:
+              only:
+                - master

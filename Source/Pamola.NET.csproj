@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Pamola</RootNamespace>
+    <Authors>Jean L Colombo, Johni Michels</Authors>
+	<Version>0.1.0</Version>	
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>./../bin</OutputPath>
+  </PropertyGroup>
+
+</Project>
